@@ -8,7 +8,7 @@ start_router = Router()
 
 @start_router.message(Command("start"))
 async def start(message: types.Message):
-    photo = types.FSInputFile("images/barni.png")
+    photo = types.FSInputFile("images/image.png")
     await message.answer_photo(photo=photo, caption=start_text, reply_markup=start_kb)
 
 

@@ -31,7 +31,7 @@ async def cancel_process(call: types.CallbackQuery, state: FSMContext):
 @fsm_router.callback_query(F.data == "Назад в меню")
 async def back_to_main_menu(call: types.CallbackQuery, state: FSMContext):
     await state.clear()
-    photo = types.FSInputFile("images/barni.png")
+    photo = types.FSInputFile("images/image.png")
     await call.message.answer_photo(photo=photo, caption=start_text, reply_markup=start_kb)
 
 @fsm_router.callback_query(F.data == "start_fsm")

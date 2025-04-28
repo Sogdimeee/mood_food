@@ -1,0 +1,15 @@
+[Unit]
+Description=My Telegram Bot
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/mood_food/
+ExecStart=/home/ubuntu/mood_food/venv/bin/python /home/ubuntu/mood_food/main.py  # Запуск Python в виртуальном окружении
+Restart=always
+RestartSec=5
+Environment=PATH=/path/to/your/project/venv/bin:/usr/bin:/bin
+
+[Install]
+WantedBy=multi-user.target
