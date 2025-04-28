@@ -89,9 +89,7 @@ async def choose_aim(call: types.CallbackQuery, state: FSMContext):
         await call.message.answer("Какие у тебя предпочтения?", reply_markup=create_dynamic_kb(preferences))
     elif data.get("format") == "Десерт":
         await finish_with_ai(call, state)
-        await bot.delete_message(call.message.chat.id, call.message.message_id)
-        await state.set_state(Food.preferences)
-        await call.message.answer("Какие у тебя предпочтения?", reply_markup=create_dynamic_kb(preferences))
+        await bot.delete_message(call.message.chat.id, call.message.message_id
     else:
         await state.set_state(Food.drink_effect)
         await call.message.answer("Какой эффект хочешь от напитка?", reply_markup=create_dynamic_kb(drink_effect))
