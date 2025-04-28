@@ -7,6 +7,7 @@ async def ask_ai(prompt: str) -> str:
         api_key="...",
     )
 
+
     completion = client.chat.completions.create(
         model="deepseek/deepseek-r1-distill-qwen-32b:free",
         messages=[
